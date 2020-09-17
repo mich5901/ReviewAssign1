@@ -12,14 +12,19 @@ public class Divide {
         System.out.print("Enter your second value > ");
         int2 = s.nextInt();
 
-        if (int1 < int2) {
+        if (int1 > int2) {
             rem = int1 % int2;
-            System.out.println("The remainder is > " + rem);
+            quo = (int1-rem)/int2;
+            System.out.println("The remainder is > " + quo + rem);
 
-        } else if (int2 < int1) {
+        } else if (int2 > int1) {
             rem = int2 % int1;
-            System.out.println("The remainder is > " + rem);
+            quo = (int2-rem)/int1;
+            System.out.println("The remainder is > " + quo + rem);
         }
+        
+                    
+        
 
     }
 
