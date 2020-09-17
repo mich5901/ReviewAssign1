@@ -1,21 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package part2;
 
-/**
- *
- * @author mich5901
- */
+import java.util.Scanner;
+
 public class EmployeePay {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+     Scanner s = new Scanner(System.in);
+     double wage = 0 , overtime = 0, total;
+     int hours = 0, overtimehours;
+    
+        System.out.print("Enter employee ones hours worked > ");
+        hours = s.nextInt();
+        
+        for (int i = 0; i < 10; i++) {
+        if(hours>=40){
+         wage = 22.50;
+         total = hours * wage;
+            System.out.println("Employee one earns > $ " + total);
+            break;
+        } 
+        else if(hours<=40){
+            wage = 15.00;
+            total = hours * wage;
+            System.out.println("");
+        }
+        }
     }
     
 }
