@@ -20,7 +20,7 @@ public class Divide {
         } else if (int2 > int1) {
             rem = int2 % int1;
             quo = (int2-rem)/int1;
-            System.out.println("The remainder is > " + quo + rem);
+            System.out.format("The remainder is > %.2f R .2f", quo, rem);
         }
         
                     
