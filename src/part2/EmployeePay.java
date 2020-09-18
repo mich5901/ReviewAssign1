@@ -23,7 +23,8 @@ public class EmployeePay {
         else if(hours<=40){
             wage = 15.00;
             total = hours * wage;
-            System.out.println("");
+            System.out.println("Employee one earns > " + total);
+            break;
         }
         }
     }
