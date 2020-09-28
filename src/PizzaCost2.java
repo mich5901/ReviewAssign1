@@ -89,8 +89,6 @@ public class PizzaCost2 extends javax.swing.JFrame {
 
         jLabel11.setText("Total Cost");
 
-        TotalCostField.setText("jTextField3");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,9 +101,9 @@ public class PizzaCost2 extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ToppingsField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SizeField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SizeField, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(ToppingsField)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,14 +113,14 @@ public class PizzaCost2 extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ResetButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ResetButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(LabourPrice)
                             .addComponent(HeatPrice)
                             .addComponent(ToppingPrice)
                             .addComponent(BaseCostPrice)
-                            .addComponent(TotalCostField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TotalCostField))
                         .addGap(9, 9, 9)))
                 .addContainerGap())
         );
@@ -178,8 +176,19 @@ public class PizzaCost2 extends javax.swing.JFrame {
     private void CostButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CostButtonActionPerformed
         double inches = Double.parseDouble(SizeField.getText());
         double toppingcount = Double.parseDouble(ToppingsField.getText());
+        double labour = 1.5;
+        double heat = 0.75;
         double ingredients = 0;
+        double toppings = 0.75;
         double ingredientcost = inches + ingredients;
+        double toppingcost = toppingcount * toppings;
+        double totalcost = ingredientcost + toppingcost + labour + heat;
+        
+        ToppingPrice.setText("$" + toppingcost);
+        BaseCostPrice.setText("$" + ingredientcost);
+        TotalCostField.setText("$" + totalcost);
+        
+        
     }//GEN-LAST:event_CostButtonActionPerformed
 
     /**
