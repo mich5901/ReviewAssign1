@@ -15,12 +15,17 @@ public class Divide {
         if (int1 > int2) {
             rem = int1 % int2;
             quo = (int1-rem)/int2;
-            System.out.println("The remainder is > " + quo + rem);
+            System.out.println("The answer is "+quo+"r"+rem+"");
 
         } else if (int2 > int1) {
             rem = int2 % int1;
             quo = (int2-rem)/int1;
-            System.out.format("The remainder is > %.2f R .2f", quo, rem);
+            System.out.println("The answer is "+quo+"r"+rem+"");
+        }
+        else{
+            quo = 1;
+            rem = 0;
+            System.out.println("The answer is "+quo+"r"+rem+"");
         }
         
                     
